@@ -6,11 +6,10 @@ use embedded_hal as hal;
 use errors::Error;
 use heapless::Vec as StackVec;
 use nb::block;
+use embedded_hal::blocking::delay::DelayUs;
 
 const SIM800_NUMBER_LEN: usize = 40;
 const SIM800_RCV_BUF_LEN: usize = 1600;
-//
-use embedded_hal::blocking::delay::DelayUs;
 
 pub struct Sim800Module<UART, DELAY> {
     uart: UART,
